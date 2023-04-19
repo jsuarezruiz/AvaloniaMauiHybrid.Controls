@@ -1,3 +1,5 @@
 # AvaloniaMauiHybrid.Controls
 
-Easily expose Avalonia drawn controls to use in .NET MAUI.
+Allow to easily use Avalonia drawn controls in .NET MAUI.
+
+![AvaloniaMauiHybrid.Controls](images/avaloniamauihybrid-controls.png)
