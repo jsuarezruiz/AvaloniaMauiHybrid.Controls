@@ -1,4 +1,5 @@
-﻿using ACalendar = Avalonia.Controls.Calendar;
+﻿using Avalonia.Maui.Extensions;
+using ACalendar = Avalonia.Controls.Calendar;
 
 namespace Avalonia.Maui.Controls
 {
@@ -15,6 +16,13 @@ namespace Avalonia.Maui.Controls
         {
         }
 
+        public static new readonly BindableProperty BackgroundProperty =
+            BindableProperty.Create(nameof(Background), typeof(Brush), typeof(Calendar), null,
+                propertyChanged: (bindableObject, oldValue, newValue) =>
+                {
+                    (bindableObject as Calendar).UpdateBackground();
+                });
+
         public static readonly BindableProperty FirstDayOfWeekProperty =
             BindableProperty.Create(nameof(FirstDayOfWeek), typeof(DayOfWeek), typeof(Calendar), null,
                 propertyChanged: (bindableObject, oldValue, newValue) =>
@@ -29,6 +37,12 @@ namespace Avalonia.Maui.Controls
                     (bindableObject as Calendar).UpdateIsTodayHighlighted();
                 });
 
+        public new Brush Background
+        {
+            get { return (Brush)GetValue(BackgroundProperty); }
+            set { SetValue(BackgroundProperty, value); }
+        }
+
         public DayOfWeek FirstDayOfWeek
         {
             get { return (DayOfWeek)GetValue(FirstDayOfWeekProperty); }
@@ -39,6 +53,11 @@ namespace Avalonia.Maui.Controls
         {
             get { return (bool)GetValue(IsTodayHighlightedProperty); }
             set { SetValue(IsTodayHighlightedProperty, value); }
+        }
+
+        void UpdateBackground()
+        {
+            _calendar.Background = Background.ToPlatform();
         }
 
         void UpdateFirstDayOfWeek()

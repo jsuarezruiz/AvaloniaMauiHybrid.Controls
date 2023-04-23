@@ -25,6 +25,10 @@
                 Text="ProgressBar"/>
             <avalonia:ProgressBar
                 IsIndeterminate="True"/>
+            <Label
+                Text="ToggleSwitch"/>
+            <avalonia:ToggleSwitch
+                IsChecked="True"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
