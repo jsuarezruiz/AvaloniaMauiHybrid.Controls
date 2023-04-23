@@ -2,13 +2,17 @@
 
 namespace Avalonia.Maui.Controls
 {
-    public class Calendar : AvaloniaView
+    public class Calendar : AvaloniaView, IDisposable
     {
         readonly ACalendar _calendar;
 
         public Calendar()
         {
             Content = _calendar = new ACalendar();
+        }
+
+        public void Dispose()
+        {
         }
 
         public static readonly BindableProperty FirstDayOfWeekProperty =

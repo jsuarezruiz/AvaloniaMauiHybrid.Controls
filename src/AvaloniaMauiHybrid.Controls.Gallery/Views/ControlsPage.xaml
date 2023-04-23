@@ -3,17 +3,27 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="AvaloniaMauiHybrid.Controls.Gallery.ControlsPage"
-    xmlns:controls="clr-namespace:Avalonia.Maui.Controls;assembly=AvaloniaMauiHybrid.Controls"
+    xmlns:avalonia="clr-namespace:Avalonia.Maui.Controls;assembly=AvaloniaMauiHybrid.Controls"
     Title="AvaloniaMauiHybrid Controls">
     <ScrollView>
         <VerticalStackLayout>
             <Label
+                Text="Button"/>
+            <avalonia:Button
+                Background="Purple"
+                Foreground="White"
+                Text="Button"/>
+            <Label
                 Text="Calendar"/>
-            <controls:Calendar
+            <avalonia:Calendar
                 IsTodayHighlighted="True"/>
             <Label
+                Text="CheckBox"/>
+            <avalonia:CheckBox  
+                Text="CheckBox"/>
+            <Label
                 Text="ProgressBar"/>
-            <controls:ProgressBar
+            <avalonia:ProgressBar
                 IsIndeterminate="True"/>
         </VerticalStackLayout>
     </ScrollView>

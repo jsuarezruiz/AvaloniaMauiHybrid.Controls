@@ -2,13 +2,17 @@
 
 namespace Avalonia.Maui.Controls
 {
-    public class ProgressBar : AvaloniaView
+    public class ProgressBar : AvaloniaView, IDisposable
     {
         readonly AProgressBar _progressBar;
 
         public ProgressBar()
         {
             Content = _progressBar = new AProgressBar();
+        }
+
+        public void Dispose()
+        {
         }
 
         public static readonly BindableProperty IsIndeterminateProperty =
