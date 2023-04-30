@@ -26,6 +26,11 @@
             <avalonia:ProgressBar
                 IsIndeterminate="True"/>
             <Label
+                Text="TextBlock"/>
+            <avalonia:TextBlock
+                Text="TextBlock"
+                Foreground="Red"/>
+            <Label
                 Text="ToggleSwitch"/>
             <avalonia:ToggleSwitch
                 IsChecked="True"/>
